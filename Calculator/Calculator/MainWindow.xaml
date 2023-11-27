@@ -1,0 +1,54 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Calculator" MinHeight="450" MinWidth="300" Height="450" Width="300" FontSize="20" Background="SlateGray" FontWeight="Bold">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+        <!--Column-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource ColumnDefinitionStyle}"/>
+            <ColumnDefinition Style="{StaticResource ColumnDefinitionStyle}"/>
+            <ColumnDefinition Style="{StaticResource ColumnDefinitionStyle}"/>
+            <ColumnDefinition Style="{StaticResource ColumnDefinitionStyle}"/>
+        </Grid.ColumnDefinitions>
+        <!--Row-->
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource RowDefinitionStyle}"/>
+            <RowDefinition Style="{StaticResource RowDefinitionStyle}"/>
+            <RowDefinition Style="{StaticResource RowDefinitionStyle}"/>
+            <RowDefinition Style="{StaticResource RowDefinitionStyle}"/>
+            <RowDefinition Style="{StaticResource RowDefinitionStyle}"/>
+            <RowDefinition Style="{StaticResource RowDefinitionStyle}"/>
+        </Grid.RowDefinitions>
+        <!--Buttons-->
+        <Button Template="{DynamicResource ButtonTemplate}" Content="+/-" Grid.Row="5" Click="Button_ChangePolarityClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="1" Content="0" Grid.Row="5" Click="Button_ZeroClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="2" Content="," Grid.Row="5" Click="Button_CommaClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Content="1" Grid.Row="4" Click="Button_NumberOneClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="1" Content="2" Grid.Row="4" Click="Button_NumberTwoClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="2" Content="3" Grid.Row="4" Click="Button_NumberThreeClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Content="4" Grid.Row="3" Click="Button_NumberFourClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="1" Content="5" Grid.Row="3" Click="Button_NumberFiveClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="2" Content="6" Grid.Row="3" Click="Button_NumberSixClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Content="7" Grid.Row="2" Click="Button_NumberSevenClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}"  Grid.Column="1" Content="8" Grid.Row="2" Click="Button_NumberEightClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="2" Content="9" Grid.Row="2" Click="Button_NumberNineClick" Style="{StaticResource ButtonStyle}"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="1" Content="C" Grid.Row="1" Click="Button_NumberRemoveClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="3" Content="/" Grid.Row="1" Click="Button_NumberDivideClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="3" Content="=" Grid.Row="5" Click="Button_NumberResultClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="3" Content="+" Grid.Row="4" Click="Button_NumberCompileClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="3" Content="-" Grid.Row="3" Click="Button_NumberSubstractClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="3" Content="*" Grid.Row="2" Click="Button_NumberMultipleClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Column="2" Content="&lt;--" Grid.Row="1" Click="Button_NumberRemoveOneClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <Button Template="{DynamicResource ButtonTemplate}" Grid.Row="1" Content="%" Click="Button_NumberProcentClick" Style="{StaticResource ButtonStyle}" Background="Orange"/>
+        <!--TextBox-->
+        <TextBox x:Name="TextBoxResult" Text="0" Grid.ColumnSpan="4" TextAlignment="Right" TextChanged="TextBox_ChangeMessageResult" Style="{StaticResource TextBoxStyle}"/>
+    </Grid>
+</Window>
